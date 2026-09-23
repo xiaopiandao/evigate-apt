@@ -373,14 +373,10 @@ def build_tex(
     thanks = "".join(rf"\thanks{{{item}}}" for item in author_metadata["thanks_latex"])
     authors = f"{author_metadata['authors_latex']}{thanks}"
     coi = str(author_metadata["conflict_of_interest_latex"])
-    artifact_url = str(author_metadata.get("artifact_url", ""))
+    artifact_url = str(author_metadata.get("artifact_url", "")).strip() or PUBLIC_ARTIFACT_URL
     availability = (
         "Source code, schemas, protocols, aggregate result summaries, and a SHA-256 file manifest "
         + rf"are available at \url{{{artifact_url}}}. The third-party data and per-case evidence packages are not redistributed."
-        if artifact_url
-        else "Source code, schemas, protocols, aggregate result summaries, and a SHA-256 file manifest "
-        "are available from the corresponding author upon reasonable request. "
-        "The third-party data and per-case evidence packages are not redistributed."
     )
     coi_block = (
         "\n\n\\noindent\\textbf{Conflict of interest:} " + coi

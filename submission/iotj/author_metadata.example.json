@@ -1,0 +1,12 @@
+{
+  "authors_latex": "First A. Author, Second B. Author, and Third C. Author",
+  "short_author_latex": "F. A. Author et al.",
+  "funding_latex": "This work was supported by [funder] under Grant [number].",
+  "affiliations_latex": [
+    "First A. Author and Second B. Author are with [department], [institution], [city, country] (e-mail: [addresses]).",
+    "Third C. Author is with [department], [institution], [city, country] (e-mail: [address])."
+  ],
+  "corresponding_author_latex": "Corresponding author: First A. Author.",
+  "conflict_of_interest_latex": "The authors declare no conflict of interest.",
+  "artifact_url": "https://replace-with-verified-anonymous-repository-url"
+}

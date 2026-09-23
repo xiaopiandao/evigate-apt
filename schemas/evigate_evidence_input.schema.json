@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/evigate/evidence-input.schema.json",
+  "title": "EviGate-APT inference evidence case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "network_alert",
+    "provenance_candidate_graph",
+    "decision_placeholder"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "pattern": "^case_[0-9a-f]{20}$"},
+    "network_alert": {"type": "object"},
+    "provenance_candidate_graph": {
+      "type": "object",
+      "required": ["radius_seconds", "candidate_entity_count", "relation_count", "entities", "relations"],
+      "properties": {
+        "radius_seconds": {"type": "integer", "minimum": 1},
+        "candidate_entity_count": {"type": "integer", "minimum": 0},
+        "relation_count": {"type": "integer", "minimum": 0},
+        "entities": {"type": "array", "items": {"type": "object"}},
+        "relations": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "decision_placeholder": {"type": "object"}
+  }
+}

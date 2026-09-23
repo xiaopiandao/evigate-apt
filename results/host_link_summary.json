@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "analysis_status": "post_freeze_post_hoc_dataset_audit",
+  "generated_at_utc": "2026-09-19T14:06:45.713786+00:00",
+  "join_rule": {
+    "remote_endpoint_exact": true,
+    "absolute_time_tolerance_seconds": 0.1,
+    "supported_endpoint_minimum_matches": 10,
+    "time_shift_negative_controls_seconds": [
+      -60.0,
+      -30.0,
+      0.0,
+      30.0,
+      60.0
+    ]
+  },
+  "provenance": {
+    "process_entity_count": 24839,
+    "network_socket_artifact_count": 10787,
+    "connect_edge_count": 10787,
+    "deduplicated_socket_observation_count": 10723,
+    "usable_socket_observation_count": 8077,
+    "missing_process_or_socket_links": 0,
+    "malicious_process_socket_observation_count": 18,
+    "usable_malicious_process_socket_observation_count": 0
+  },
+  "network": {
+    "network_rows_scanned": 9536823,
+    "network_parse_errors": 0,
+    "attack_labeled_network_rows": 1004
+  },
+  "unshifted_match_counts_by_tolerance_seconds": {
+    "0.01": 4,
+    "0.05": 161,
+    "0.1": 755,
+    "0.5": 915,
+    "1": 927
+  },
+  "match_counts_at_primary_tolerance_by_time_offset_seconds": {
+    "-60": 0,
+    "-30": 0,
+    "+0": 755,
+    "+30": 0,
+    "+60": 0
+  },
+  "candidate_local_ips": [
+    "172.16.63.128",
+    "172.16.67.128"
+  ],
+  "primary_host_link_ip": "172.16.63.128",
+  "endpoint_match_counts_by_tolerance_seconds": {
+    "0.05": {
+      "172.16.63.128": 148,
+      "172.16.67.128": 13
+    },
+    "0.1": {
+      "172.16.63.128": 733,
+      "172.16.67.128": 22
+    }
+  },
+  "supported_endpoint_attack_rows": 1004,
+  "supported_endpoint_attack_row_fraction": 1.0,
+  "case_cohorts": {
+    "all_cases": 59,
+    "both_view_cases": 33,
+    "host_link_supported_cases": 33,
+    "in_support_host_link_supported_cases": 32,
+    "evaluated_nonpilot_host_link_supported_cases": 31
+  },
+  "direct_malicious_process_matches_at_primary_tolerance": 0,
+  "claim_boundary": "The dominant endpoint supports a data-internal, non-authoritative host-membership argument and event-cohort restriction. Secondary DNS-only candidates remain ambiguous. Missing local socket address/port prevents packet-to-PID causal attribution.",
+  "evaluation_subset": [
+    {
+      "analysis_status": "post_hoc_host_link_subset",
+      "method": "EviGate-Bind",
+      "event_count": 31,
+      "clean_accepted": 22,
+      "clean_correct": 18,
+      "clean_wrong": 4,
+      "clean_selective_risk": 0.18181818181818182,
+      "context_replacement_rows": 31,
+      "context_replacement_wrong_labels": 7,
+      "context_replacement_wrong_label_rate": 0.22580645161290322
+    },
+    {
+      "analysis_status": "post_hoc_host_link_subset",
+      "method": "matched margin",
+      "event_count": 31,
+      "clean_accepted": 21,
+      "clean_correct": 16,
+      "clean_wrong": 5,
+      "clean_selective_risk": 0.23809523809523808,
+      "context_replacement_rows": 31,
+      "context_replacement_wrong_labels": 25,
+      "context_replacement_wrong_label_rate": 0.8064516129032258
+    }
+  ]
+}

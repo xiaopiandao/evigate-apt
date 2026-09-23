@@ -1,0 +1,306 @@
+{
+  "artifacts": {
+    "stage_c_corruption_results.csv": {
+      "bytes": 31125,
+      "sha256": "6795532c3409cd2fd6136efcbb750ad34605373a58530d5593a8779347567d80"
+    },
+    "stage_c_deletion_lift.csv": {
+      "bytes": 5886,
+      "sha256": "0f2170a9ec6f3c2c1381b8fe910af363d50a95ee5a56db94e9eb9cb5a26559ef"
+    },
+    "stage_c_out_of_support.csv": {
+      "bytes": 2337,
+      "sha256": "307894fa8d684c4d376895a96cd84f4d8082db3f7be7317dd9acc25ac37b1bea"
+    },
+    "stage_c_test_predictions.csv": {
+      "bytes": 16982,
+      "sha256": "063c13f6e77b088412a666a8bae5d0e93d43a3f2c09a0027b350d83b8976eb93"
+    }
+  },
+  "calibration_threshold_operating_point": {
+    "controller_test_coverage": 0.6981132075471698,
+    "controller_test_risk": 0.43243243243243246,
+    "max_confidence_test_coverage": 0.8490566037735849,
+    "max_confidence_test_risk": 0.3111111111111111
+  },
+  "efficiency": {
+    "median_clean_case_inference_ms": 4.972300012013875,
+    "p95_clean_case_inference_ms": 26.717950003512577,
+    "reported_linear_parameter_count_last_fold_models": 2985,
+    "total_runtime_seconds": 88.20923509998829
+  },
+  "evidence_fidelity": {
+    "cases": 53,
+    "deletion_k": 3,
+    "deletion_lift_ci95": [
+      0.019067180696100725,
+      0.044949892385804976
+    ],
+    "mean_deletion_lift": 0.03173530765683183,
+    "mean_true_tactic_probability_drop_random": 0.002743748951309353,
+    "mean_true_tactic_probability_drop_topk": 0.034479056608141184
+  },
+  "fold_audits": [
+    {
+      "calibration_cases": 8,
+      "confidence_threshold_from_calibration": 0.2365345448412663,
+      "controller_threshold_from_calibration": 0.6262485386801138,
+      "controller_training": {
+        "clean_correct": 18,
+        "clean_incorrect": 10,
+        "corruption_context_replacement": 28,
+        "corruption_process_deletion": 28,
+        "corruption_random_entity_deletion": 28,
+        "corruption_socket_type_deletion": 28,
+        "corruption_time_shift": 28
+      },
+      "exact_normalized_process_document_overlap_test_in_train": 0,
+      "fold": 1,
+      "fold_runtime_seconds": 37.92529279999144,
+      "test_in_support_cases": 17,
+      "test_out_of_support_cases": 3,
+      "train_cases": 28
+    },
+    {
+      "calibration_cases": 7,
+      "confidence_threshold_from_calibration": 0.25220701218167685,
+      "controller_threshold_from_calibration": 0.6330822622195774,
+      "controller_training": {
+        "clean_correct": 13,
+        "clean_incorrect": 15,
+        "corruption_context_replacement": 28,
+        "corruption_process_deletion": 28,
+        "corruption_random_entity_deletion": 28,
+        "corruption_socket_type_deletion": 28,
+        "corruption_time_shift": 28
+      },
+      "exact_normalized_process_document_overlap_test_in_train": 0,
+      "fold": 2,
+      "fold_runtime_seconds": 12.08681369999249,
+      "test_in_support_cases": 18,
+      "test_out_of_support_cases": 2,
+      "train_cases": 28
+    },
+    {
+      "calibration_cases": 8,
+      "confidence_threshold_from_calibration": 0.2837135032941284,
+      "controller_threshold_from_calibration": 0.52718441643698,
+      "controller_training": {
+        "clean_correct": 11,
+        "clean_incorrect": 16,
+        "corruption_context_replacement": 27,
+        "corruption_process_deletion": 27,
+        "corruption_random_entity_deletion": 27,
+        "corruption_socket_type_deletion": 27,
+        "corruption_time_shift": 27
+      },
+      "exact_normalized_process_document_overlap_test_in_train": 0,
+      "fold": 3,
+      "fold_runtime_seconds": 36.528051300003426,
+      "test_in_support_cases": 18,
+      "test_out_of_support_cases": 1,
+      "train_cases": 27
+    }
+  ],
+  "full_coverage_tactic_classifier": {
+    "accuracy": 0.6226415094339622,
+    "brier_multiclass_mean": 0.1351361781018205,
+    "ece_5_bin": 0.3019923135088573,
+    "macro_f1": 0.3985185185185185,
+    "network_only_accuracy": 0.2641509433962264,
+    "structured_provenance_accuracy": 0.4528301886792453
+  },
+  "leave_one_corruption_family_out": {
+    "context_replacement": {
+      "cases": 53,
+      "controller_rejection_rate": 0.5849056603773585,
+      "controller_wrong_attribution_rate": 0.37735849056603776,
+      "max_confidence_rejection_rate": 0,
+      "max_confidence_wrong_attribution_rate": 0.9245283018867925
+    },
+    "process_deletion": {
+      "cases": 53,
+      "controller_rejection_rate": 0.9622641509433962,
+      "controller_wrong_attribution_rate": 0,
+      "max_confidence_rejection_rate": 1,
+      "max_confidence_wrong_attribution_rate": 0
+    },
+    "random_entity_deletion": {
+      "cases": 53,
+      "controller_rejection_rate": 0.660377358490566,
+      "controller_wrong_attribution_rate": 0.18867924528301888,
+      "max_confidence_rejection_rate": 0.1320754716981132,
+      "max_confidence_wrong_attribution_rate": 0.37735849056603776
+    },
+    "socket_type_deletion": {
+      "cases": 53,
+      "controller_rejection_rate": 0.20754716981132076,
+      "controller_wrong_attribution_rate": 0.3018867924528302,
+      "max_confidence_rejection_rate": 0.1509433962264151,
+      "max_confidence_wrong_attribution_rate": 0.2830188679245283
+    },
+    "time_shift": {
+      "cases": 53,
+      "controller_rejection_rate": 0.9245283018867925,
+      "controller_wrong_attribution_rate": 0.05660377358490566,
+      "max_confidence_rejection_rate": 0.1320754716981132,
+      "max_confidence_wrong_attribution_rate": 0.2830188679245283
+    }
+  },
+  "limitations": [
+    "The official Attack_info.csv was unavailable; event labels are union-derived fallback labels.",
+    "All events come from one CICAPT-IIoT2024 campaign, so confidence intervals do not establish cross-campaign generalization.",
+    "Synthetic corruptions test controlled failure modes and are not a complete model of field evidence loss.",
+    "The fixed 80% target is realized at the nearest feasible event count.",
+    "Socket matching is used only as a sufficiency feature because Stage B ablation found no retrieval gain."
+  ],
+  "out_of_support": {
+    "calibration_threshold_rejection_rate": 0.3333333333333333,
+    "events": 6
+  },
+  "primary_fixed_coverage": {
+    "absolute_risk_difference_controller_minus_baseline": 0.0714285714285714,
+    "controller_attribution_risk": 0.38095238095238093,
+    "controller_selective_macro_f1": 0.3825454545454545,
+    "coverage_matched_majority_risk": 0.5476190476190477,
+    "max_confidence_attribution_risk": 0.30952380952380953,
+    "paired_cluster_bootstrap": {
+      "controller_risk_ci95": [
+        0.21428571428571427,
+        0.5238095238095238
+      ],
+      "iterations": 10000,
+      "max_confidence_risk_ci95": [
+        0.16666666666666666,
+        0.47619047619047616
+      ],
+      "probability_difference_below_zero": 0.1166,
+      "risk_difference_ci95": [
+        -0.047619047619047644,
+        0.16666666666666669
+      ],
+      "unit": "attack_action_cluster"
+    },
+    "relative_risk_reduction": -0.23076923076923067
+  },
+  "protocol": {
+    "accepted_events": 42,
+    "controller_training": "leave-one-event-out clean correctness plus synthetic corruption negatives",
+    "derived_event_labels": true,
+    "outer_protocol": "three-fold grouped train/calibration/test",
+    "primary_baseline": "maximum-confidence rejection over the same combined tactic classifier",
+    "primary_condition": "oracle-alert, in-support events",
+    "realized_primary_coverage": 0.7924528301886793,
+    "statistical_unit": "attack_action_cluster",
+    "target_coverage": 0.8,
+    "test_events": 53,
+    "truth_sidecar_separate_from_inference_inputs": true
+  },
+  "risk_coverage_curves": {
+    "controller": [
+      {
+        "realized_coverage": 0.09433962264150944,
+        "requested_coverage": 0.1,
+        "risk": 0.6
+      },
+      {
+        "realized_coverage": 0.20754716981132076,
+        "requested_coverage": 0.2,
+        "risk": 0.45454545454545453
+      },
+      {
+        "realized_coverage": 0.3018867924528302,
+        "requested_coverage": 0.30000000000000004,
+        "risk": 0.4375
+      },
+      {
+        "realized_coverage": 0.39622641509433965,
+        "requested_coverage": 0.4,
+        "risk": 0.5238095238095238
+      },
+      {
+        "realized_coverage": 0.49056603773584906,
+        "requested_coverage": 0.5,
+        "risk": 0.4230769230769231
+      },
+      {
+        "realized_coverage": 0.6037735849056604,
+        "requested_coverage": 0.6,
+        "risk": 0.40625
+      },
+      {
+        "realized_coverage": 0.6981132075471698,
+        "requested_coverage": 0.7000000000000001,
+        "risk": 0.40540540540540543
+      },
+      {
+        "realized_coverage": 0.7924528301886793,
+        "requested_coverage": 0.8,
+        "risk": 0.38095238095238093
+      },
+      {
+        "realized_coverage": 0.9056603773584906,
+        "requested_coverage": 0.9,
+        "risk": 0.3541666666666667
+      },
+      {
+        "realized_coverage": 1.0,
+        "requested_coverage": 1.0,
+        "risk": 0.37735849056603776
+      }
+    ],
+    "max_confidence": [
+      {
+        "realized_coverage": 0.09433962264150944,
+        "requested_coverage": 0.1,
+        "risk": 0.2
+      },
+      {
+        "realized_coverage": 0.20754716981132076,
+        "requested_coverage": 0.2,
+        "risk": 0.09090909090909091
+      },
+      {
+        "realized_coverage": 0.3018867924528302,
+        "requested_coverage": 0.30000000000000004,
+        "risk": 0.25
+      },
+      {
+        "realized_coverage": 0.39622641509433965,
+        "requested_coverage": 0.4,
+        "risk": 0.23809523809523808
+      },
+      {
+        "realized_coverage": 0.49056603773584906,
+        "requested_coverage": 0.5,
+        "risk": 0.19230769230769232
+      },
+      {
+        "realized_coverage": 0.6037735849056604,
+        "requested_coverage": 0.6,
+        "risk": 0.21875
+      },
+      {
+        "realized_coverage": 0.6981132075471698,
+        "requested_coverage": 0.7000000000000001,
+        "risk": 0.2702702702702703
+      },
+      {
+        "realized_coverage": 0.7924528301886793,
+        "requested_coverage": 0.8,
+        "risk": 0.30952380952380953
+      },
+      {
+        "realized_coverage": 0.9056603773584906,
+        "requested_coverage": 0.9,
+        "risk": 0.375
+      },
+      {
+        "realized_coverage": 1.0,
+        "requested_coverage": 1.0,
+        "risk": 0.37735849056603776
+      }
+    ]
+  },
+  "study": "EviGate-APT Stage C selective tactic attribution"
+}

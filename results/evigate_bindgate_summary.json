@@ -1,0 +1,499 @@
+{
+  "artifacts": {
+    "evigate_bindgate.end_to_end.csv": {
+      "sha256": "A82DDC877952A60E460971B71E5926CDADFFB087F29270714E6286D85B8415CF"
+    },
+    "evigate_bindgate.per_tactic.csv": {
+      "sha256": "34A6A91F6ED33568D04408679EB51C66AF9E731D8D9F15E2654AF3A3F73C13AA"
+    }
+  },
+  "cluster_gap_sensitivity": {
+    "120_seconds": {
+      "partition_relation_to_300_seconds": "identical",
+      "reason": "For every tactic, the 120-second and 300-second single-linkage cluster counts are identical; lowering a one-dimensional adjacency threshold can only split a cluster, so equal per-tactic counts imply the same partition.",
+      "stage_c_and_bindgate_results": "identical to the primary 300-second results"
+    },
+    "600_and_900_seconds": {
+      "boundary": "The newly merged event is not assigned a synthetic LLM certificate; therefore these 600/900-second figures are an unaffected-subset audit, not a full rerun.",
+      "inter_cluster_gap_seconds": 329.59,
+      "merged_clusters": [
+        "cicapt2_collection_018",
+        "cicapt2_collection_019"
+      ],
+      "partition_relation_to_300_seconds": "one merge",
+      "retained_frozen_llm_events_total": 51,
+      "retained_frozen_llm_events_unaffected": 50,
+      "unaffected_subset_bindgate_clean": {
+        "accepted": 32,
+        "correct": 24,
+        "coverage": 0.64,
+        "events": 50,
+        "selective_risk": 0.25,
+        "unconditional_accuracy": 0.48,
+        "wrong": 8,
+        "wrong_label_rate": 0.16
+      },
+      "unaffected_subset_bindgate_three_family_macro_wrong_label_rate": 0.19333333333333336,
+      "unaffected_subset_stage_c_full_coverage_accuracy": 0.6
+    }
+  },
+  "end_to_end": {
+    "accepted": 24,
+    "correct": 18,
+    "coverage": 0.47058823529411764,
+    "denominator_note": "51 non-pilot CICAPT attack-action clusters; the two prompt-development exclusions cannot be scored by the frozen final LLM artifact",
+    "events": 51,
+    "selective_risk": 0.25,
+    "stage_a_coverage": 0.7058823529411765,
+    "stage_a_covered": 36,
+    "unconditional_accuracy": 0.35294117647058826,
+    "wrong": 6,
+    "wrong_label_rate": 0.11764705882352941
+  },
+  "family_results": {
+    "calibrated_margin": {
+      "clean": {
+        "accepted": 38,
+        "correct": 28,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.2631578947368421,
+        "unconditional_accuracy": 0.5490196078431373,
+        "wrong": 10,
+        "wrong_label_rate": 0.19607843137254902
+      },
+      "context_replacement": {
+        "accepted": 48,
+        "correct": 3,
+        "coverage": 0.9411764705882353,
+        "events": 51,
+        "selective_risk": 0.9375,
+        "unconditional_accuracy": 0.058823529411764705,
+        "wrong": 45,
+        "wrong_label_rate": 0.8823529411764706
+      },
+      "process_deletion": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      },
+      "random_entity_deletion": {
+        "accepted": 40,
+        "correct": 24,
+        "coverage": 0.7843137254901961,
+        "events": 51,
+        "selective_risk": 0.4,
+        "unconditional_accuracy": 0.47058823529411764,
+        "wrong": 16,
+        "wrong_label_rate": 0.3137254901960784
+      },
+      "socket_type_deletion": {
+        "accepted": 37,
+        "correct": 27,
+        "coverage": 0.7254901960784313,
+        "events": 51,
+        "selective_risk": 0.2702702702702703,
+        "unconditional_accuracy": 0.5294117647058824,
+        "wrong": 10,
+        "wrong_label_rate": 0.19607843137254902
+      },
+      "three_family_macro_wrong_label_rate": 0.4640522875816993,
+      "time_shift": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      }
+    },
+    "full_cascade": {
+      "clean": {
+        "accepted": 33,
+        "correct": 25,
+        "coverage": 0.6470588235294118,
+        "events": 51,
+        "selective_risk": 0.24242424242424243,
+        "unconditional_accuracy": 0.49019607843137253,
+        "wrong": 8,
+        "wrong_label_rate": 0.1568627450980392
+      },
+      "context_replacement": {
+        "accepted": 18,
+        "correct": 1,
+        "coverage": 0.35294117647058826,
+        "events": 51,
+        "selective_risk": 0.9444444444444444,
+        "unconditional_accuracy": 0.0196078431372549,
+        "wrong": 17,
+        "wrong_label_rate": 0.3333333333333333
+      },
+      "process_deletion": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      },
+      "random_entity_deletion": {
+        "accepted": 11,
+        "correct": 7,
+        "coverage": 0.21568627450980393,
+        "events": 51,
+        "selective_risk": 0.36363636363636365,
+        "unconditional_accuracy": 0.13725490196078433,
+        "wrong": 4,
+        "wrong_label_rate": 0.0784313725490196
+      },
+      "socket_type_deletion": {
+        "accepted": 33,
+        "correct": 25,
+        "coverage": 0.6470588235294118,
+        "events": 51,
+        "selective_risk": 0.24242424242424243,
+        "unconditional_accuracy": 0.49019607843137253,
+        "wrong": 8,
+        "wrong_label_rate": 0.1568627450980392
+      },
+      "three_family_macro_wrong_label_rate": 0.1895424836601307,
+      "time_shift": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      }
+    },
+    "full_no_llm": {
+      "clean": {
+        "accepted": 33,
+        "correct": 25,
+        "coverage": 0.6470588235294118,
+        "events": 51,
+        "selective_risk": 0.24242424242424243,
+        "unconditional_accuracy": 0.49019607843137253,
+        "wrong": 8,
+        "wrong_label_rate": 0.1568627450980392
+      },
+      "context_replacement": {
+        "accepted": 24,
+        "correct": 2,
+        "coverage": 0.47058823529411764,
+        "events": 51,
+        "selective_risk": 0.9166666666666666,
+        "unconditional_accuracy": 0.0392156862745098,
+        "wrong": 22,
+        "wrong_label_rate": 0.43137254901960786
+      },
+      "process_deletion": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      },
+      "random_entity_deletion": {
+        "accepted": 10,
+        "correct": 6,
+        "coverage": 0.19607843137254902,
+        "events": 51,
+        "selective_risk": 0.4,
+        "unconditional_accuracy": 0.11764705882352941,
+        "wrong": 4,
+        "wrong_label_rate": 0.0784313725490196
+      },
+      "socket_type_deletion": {
+        "accepted": 30,
+        "correct": 23,
+        "coverage": 0.5882352941176471,
+        "events": 51,
+        "selective_risk": 0.23333333333333334,
+        "unconditional_accuracy": 0.45098039215686275,
+        "wrong": 7,
+        "wrong_label_rate": 0.13725490196078433
+      },
+      "three_family_macro_wrong_label_rate": 0.21568627450980393,
+      "time_shift": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      }
+    },
+    "reference_margin": {
+      "clean": {
+        "accepted": 33,
+        "correct": 22,
+        "coverage": 0.6470588235294118,
+        "events": 51,
+        "selective_risk": 0.3333333333333333,
+        "unconditional_accuracy": 0.43137254901960786,
+        "wrong": 11,
+        "wrong_label_rate": 0.21568627450980393
+      },
+      "context_replacement": {
+        "accepted": 47,
+        "correct": 3,
+        "coverage": 0.9215686274509803,
+        "events": 51,
+        "selective_risk": 0.9361702127659575,
+        "unconditional_accuracy": 0.058823529411764705,
+        "wrong": 44,
+        "wrong_label_rate": 0.8627450980392157
+      },
+      "process_deletion": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      },
+      "random_entity_deletion": {
+        "accepted": 28,
+        "correct": 18,
+        "coverage": 0.5490196078431373,
+        "events": 51,
+        "selective_risk": 0.35714285714285715,
+        "unconditional_accuracy": 0.35294117647058826,
+        "wrong": 10,
+        "wrong_label_rate": 0.19607843137254902
+      },
+      "socket_type_deletion": {
+        "accepted": 31,
+        "correct": 20,
+        "coverage": 0.6078431372549019,
+        "events": 51,
+        "selective_risk": 0.3548387096774194,
+        "unconditional_accuracy": 0.39215686274509803,
+        "wrong": 11,
+        "wrong_label_rate": 0.21568627450980393
+      },
+      "three_family_macro_wrong_label_rate": 0.42483660130718953,
+      "time_shift": {
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "events": 51,
+        "selective_risk": null,
+        "unconditional_accuracy": 0.0,
+        "wrong": 0,
+        "wrong_label_rate": 0.0
+      }
+    }
+  },
+  "input_integrity": {
+    "bind_rows_sha256": "3789C7C857C1A93D151D41A60B1DAF7AE005BA5EF8C5547F660AD0BEB991372E",
+    "fair_rows_sha256": "B2F571C7DD2ADF487E129EA0128979E796453003E7F3F82E7ED8E5ECD90A099E",
+    "stage_a_rows_sha256": "6C3370A8D6B228AACA20D685A6CB3644E5641EDE28DDDFEFA2BADC692CB393BE"
+  },
+  "paired_comparisons": {
+    "calibrated_margin_minus_full": {
+      "estimate": 0.2745098039215686,
+      "events": 51,
+      "exact_sign_flip": {
+        "nonzero_event_differences": 39,
+        "observed_absolute_sum": 42,
+        "sign_assignments": 549755813888,
+        "two_sided_exact_p": 1.8979335436597466e-08
+      },
+      "families": [
+        "socket_type_deletion",
+        "random_entity_deletion",
+        "context_replacement"
+      ],
+      "interval_95": [
+        0.19607843137254902,
+        0.34640522875817
+      ],
+      "probability_positive": 1.0,
+      "replicates": 10000,
+      "seed": 20260921
+    },
+    "context_exact_mcnemar": {
+      "matched_margin_vs_full": {
+        "candidate_only_wrong": 0,
+        "discordant_pairs": 27,
+        "reference_only_wrong": 27,
+        "two_sided_exact_p": 1.4901161193847656e-08
+      },
+      "no_llm_vs_full": {
+        "candidate_only_wrong": 0,
+        "discordant_pairs": 5,
+        "reference_only_wrong": 5,
+        "two_sided_exact_p": 0.0625
+      }
+    },
+    "matched_margin_minus_full": {
+      "estimate": 0.23529411764705885,
+      "events": 51,
+      "exact_sign_flip": {
+        "nonzero_event_differences": 37,
+        "observed_absolute_sum": 36,
+        "sign_assignments": 137438953472,
+        "two_sided_exact_p": 8.227652870118618e-08
+      },
+      "families": [
+        "socket_type_deletion",
+        "random_entity_deletion",
+        "context_replacement"
+      ],
+      "interval_95": [
+        0.1699346405228758,
+        0.3006535947712418
+      ],
+      "probability_positive": 1.0,
+      "replicates": 10000,
+      "seed": 20260919
+    },
+    "no_llm_minus_full": {
+      "estimate": 0.026143790849673203,
+      "events": 51,
+      "exact_sign_flip": {
+        "nonzero_event_differences": 8,
+        "observed_absolute_sum": 4,
+        "sign_assignments": 256,
+        "two_sided_exact_p": 0.2890625
+      },
+      "families": [
+        "socket_type_deletion",
+        "random_entity_deletion",
+        "context_replacement"
+      ],
+      "interval_95": [
+        -0.006535947712418301,
+        0.06535947712418301
+      ],
+      "probability_positive": 0.9038,
+      "replicates": 10000,
+      "seed": 20260920
+    }
+  },
+  "per_tactic": [
+    {
+      "end_to_end_accepted": 14,
+      "end_to_end_correct": 13,
+      "end_to_end_coverage": 0.5833333333333334,
+      "end_to_end_selective_risk": 0.07142857142857142,
+      "end_to_end_wrong": 1,
+      "events": 24,
+      "full_cascade_accepted": 18,
+      "full_cascade_correct": 17,
+      "full_cascade_coverage": 0.75,
+      "full_cascade_selective_risk": 0.05555555555555555,
+      "full_cascade_wrong": 1,
+      "full_no_llm_accepted": 17,
+      "full_no_llm_correct": 16,
+      "full_no_llm_coverage": 0.7083333333333334,
+      "full_no_llm_selective_risk": 0.058823529411764705,
+      "full_no_llm_wrong": 1,
+      "tactic": "collection"
+    },
+    {
+      "end_to_end_accepted": 2,
+      "end_to_end_correct": 2,
+      "end_to_end_coverage": 0.4,
+      "end_to_end_selective_risk": 0.0,
+      "end_to_end_wrong": 0,
+      "events": 5,
+      "full_cascade_accepted": 3,
+      "full_cascade_correct": 2,
+      "full_cascade_coverage": 0.6,
+      "full_cascade_selective_risk": 0.3333333333333333,
+      "full_cascade_wrong": 1,
+      "full_no_llm_accepted": 3,
+      "full_no_llm_correct": 3,
+      "full_no_llm_coverage": 0.6,
+      "full_no_llm_selective_risk": 0.0,
+      "full_no_llm_wrong": 0,
+      "tactic": "command_and_control"
+    },
+    {
+      "end_to_end_accepted": 2,
+      "end_to_end_correct": 0,
+      "end_to_end_coverage": 0.2857142857142857,
+      "end_to_end_selective_risk": 1.0,
+      "end_to_end_wrong": 2,
+      "events": 7,
+      "full_cascade_accepted": 3,
+      "full_cascade_correct": 0,
+      "full_cascade_coverage": 0.42857142857142855,
+      "full_cascade_selective_risk": 1.0,
+      "full_cascade_wrong": 3,
+      "full_no_llm_accepted": 3,
+      "full_no_llm_correct": 0,
+      "full_no_llm_coverage": 0.42857142857142855,
+      "full_no_llm_selective_risk": 1.0,
+      "full_no_llm_wrong": 3,
+      "tactic": "credential_access"
+    },
+    {
+      "end_to_end_accepted": 4,
+      "end_to_end_correct": 3,
+      "end_to_end_coverage": 0.36363636363636365,
+      "end_to_end_selective_risk": 0.25,
+      "end_to_end_wrong": 1,
+      "events": 11,
+      "full_cascade_accepted": 7,
+      "full_cascade_correct": 6,
+      "full_cascade_coverage": 0.6363636363636364,
+      "full_cascade_selective_risk": 0.14285714285714285,
+      "full_cascade_wrong": 1,
+      "full_no_llm_accepted": 7,
+      "full_no_llm_correct": 6,
+      "full_no_llm_coverage": 0.6363636363636364,
+      "full_no_llm_selective_risk": 0.14285714285714285,
+      "full_no_llm_wrong": 1,
+      "tactic": "discovery"
+    },
+    {
+      "end_to_end_accepted": 2,
+      "end_to_end_correct": 0,
+      "end_to_end_coverage": 0.5,
+      "end_to_end_selective_risk": 1.0,
+      "end_to_end_wrong": 2,
+      "events": 4,
+      "full_cascade_accepted": 2,
+      "full_cascade_correct": 0,
+      "full_cascade_coverage": 0.5,
+      "full_cascade_selective_risk": 1.0,
+      "full_cascade_wrong": 2,
+      "full_no_llm_accepted": 3,
+      "full_no_llm_correct": 0,
+      "full_no_llm_coverage": 0.75,
+      "full_no_llm_selective_risk": 1.0,
+      "full_no_llm_wrong": 3,
+      "tactic": "exfiltration"
+    }
+  ],
+  "status": "post-freeze analysis of frozen per-case artifacts; no refitting",
+  "study": "EviGate-Bind reviewer revision diagnostics",
+  "three_family_definition": [
+    "socket_type_deletion",
+    "random_entity_deletion",
+    "context_replacement"
+  ],
+  "training_calibrated_comparator": "The original fold-specific clean-calibration margin decision with the same missing-process and positive-time-proximity rules as the final cascade; unlike count matching, it uses no test-fold acceptance count."
+}

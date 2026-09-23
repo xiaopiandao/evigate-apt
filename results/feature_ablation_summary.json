@@ -1,0 +1,209 @@
+{
+  "artifact_hashes": {
+    "full": {
+      "per_case_sha256": "41626c93ce139048fd2e56bf9573e6b8d531f9f632a594f8a0f2016045e45a14",
+      "summary_sha256": "9ca68f7b78a7f1b5649077a089ba7af4376b43d982b7702dc145d8b5696bebee",
+      "synthetic_binding_sha256": "310ac2150e3bdac7daadbb6cdf628cc8b8c5ff4480b2d44c5dcb8ec01bda9125"
+    },
+    "network_only": {
+      "per_case_sha256": "536b97a238056c0de38cbe1d59955304e4fb8128f74f5ead81e8a004d0464627",
+      "summary_sha256": "41e872d9f8ac0cbf23203aa680fabe49b1bc67807e4bf0ea643686941245dd06",
+      "synthetic_binding_sha256": "047885bf3eb80b7ed691848fa0169035c6f6ba880ca1cea94838c9c068c38fb2"
+    },
+    "provenance_only": {
+      "per_case_sha256": "54b5bca33aae0698d80952cfe1d08c2a34e1be4720d660d93dd639e00f01341a",
+      "summary_sha256": "cdc500d714a7dded0342d4637a9dafe729cabd15341bda26dfc3f9f876102030",
+      "synthetic_binding_sha256": "f1dd772a078b9d730e1508961d16010324e6b05b11c7ffd507617d51ca04f54c"
+    },
+    "without_network_posterior": {
+      "per_case_sha256": "6f5dce4a3a4e7d3016e5a07f924a25657974b75c1ac313ee4acd4082075eb7b6",
+      "summary_sha256": "7059d5c83a4f74d72d9c211e5a1579af8843b0d53a3d256fb4d621a5288fbbd7",
+      "synthetic_binding_sha256": "b689b9228bf526236552385ff8991fdbb3fc4df362921122967f6a7ba02dfacf"
+    }
+  },
+  "decision_cost": {
+    "clean_cost": "wrong labels + c * abstentions",
+    "foreign_context_cost": "all issued labels + c * abstentions",
+    "full_vs_training_calibrated_clean_break_even_c": 0.4,
+    "full_vs_training_calibrated_context_break_even_c": 1.0,
+    "interpretation": "Full BindGate has lower clean decision cost when abstention costs less than 0.4 of a wrong label, and lower foreign-context integrity cost for every c below 1.0.",
+    "wrong_issue_cost": 1.0
+  },
+  "feature_ablation": [
+    {
+      "clean_accepted": 33,
+      "clean_selective_risk": 0.24242424242424243,
+      "context_wrong_label_rate": 0.3333333333333333,
+      "feature_mode": "full",
+      "features": 92,
+      "five_family_macro_wrong_label_rate": 0.11372549019607843,
+      "synthetic_different_tactic_alarm_rate": 0.3137254901960784,
+      "synthetic_same_tactic_alarm_rate": 0.2549019607843137,
+      "workstation_median_ms": 2.24095000885427,
+      "workstation_p95_ms": 3.4430499872541986
+    },
+    {
+      "clean_accepted": 35,
+      "clean_selective_risk": 0.2571428571428571,
+      "context_wrong_label_rate": 0.5686274509803921,
+      "feature_mode": "without_network_posterior",
+      "features": 70,
+      "five_family_macro_wrong_label_rate": 0.19607843137254902,
+      "synthetic_different_tactic_alarm_rate": 0.058823529411764705,
+      "synthetic_same_tactic_alarm_rate": 0.0392156862745098,
+      "workstation_median_ms": 2.276749990414828,
+      "workstation_p95_ms": 3.478799990261905
+    },
+    {
+      "clean_accepted": 36,
+      "clean_selective_risk": 0.2777777777777778,
+      "context_wrong_label_rate": 0.6078431372549019,
+      "feature_mode": "network_only",
+      "features": 14,
+      "five_family_macro_wrong_label_rate": 0.21960784313725493,
+      "synthetic_different_tactic_alarm_rate": 0.0,
+      "synthetic_same_tactic_alarm_rate": 0.0,
+      "workstation_median_ms": 2.12985000689514,
+      "workstation_p95_ms": 3.157574996293988
+    },
+    {
+      "clean_accepted": 36,
+      "clean_selective_risk": 0.2777777777777778,
+      "context_wrong_label_rate": 0.6078431372549019,
+      "feature_mode": "provenance_only",
+      "features": 16,
+      "five_family_macro_wrong_label_rate": 0.21176470588235294,
+      "synthetic_different_tactic_alarm_rate": 0.0,
+      "synthetic_same_tactic_alarm_rate": 0.0,
+      "workstation_median_ms": 2.1013999939896166,
+      "workstation_p95_ms": 2.883649998693727
+    }
+  ],
+  "paired_candidate_minus_full": {
+    "network_only": {
+      "difference_direction": "candidate minus full; positive is worse for risk metrics",
+      "estimands": {
+        "clean_acceptance_rate_difference": {
+          "estimate": 0.058823529411764705,
+          "interval_95": [
+            -0.0196078431372549,
+            0.1568627450980392
+          ],
+          "probability_positive": 0.8801
+        },
+        "clean_selective_risk_difference": {
+          "estimate": 0.03535353535353536,
+          "interval_95": [
+            -0.020022998526891732,
+            0.10902426520847573
+          ],
+          "probability_positive": 0.8476
+        },
+        "context_wrong_label_rate_difference": {
+          "estimate": 0.2745098039215686,
+          "interval_95": [
+            0.1568627450980392,
+            0.3921568627450981
+          ],
+          "probability_positive": 1.0
+        },
+        "corruption_macro_wrong_label_rate_difference": {
+          "estimate": 0.1058823529411765,
+          "interval_95": [
+            0.07450980392156863,
+            0.1411764705882353
+          ],
+          "probability_positive": 1.0
+        }
+      },
+      "events": 51,
+      "replicates": 10000,
+      "seed": 20260919,
+      "unit": "event cluster"
+    },
+    "provenance_only": {
+      "difference_direction": "candidate minus full; positive is worse for risk metrics",
+      "estimands": {
+        "clean_acceptance_rate_difference": {
+          "estimate": 0.058823529411764705,
+          "interval_95": [
+            -0.0196078431372549,
+            0.13725490196078433
+          ],
+          "probability_positive": 0.8742
+        },
+        "clean_selective_risk_difference": {
+          "estimate": 0.03535353535353536,
+          "interval_95": [
+            -0.020834966039707428,
+            0.10790299612668022
+          ],
+          "probability_positive": 0.8438
+        },
+        "context_wrong_label_rate_difference": {
+          "estimate": 0.2745098039215686,
+          "interval_95": [
+            0.1568627450980392,
+            0.3921568627450981
+          ],
+          "probability_positive": 1.0
+        },
+        "corruption_macro_wrong_label_rate_difference": {
+          "estimate": 0.09803921568627451,
+          "interval_95": [
+            0.06666666666666667,
+            0.1333333333333333
+          ],
+          "probability_positive": 1.0
+        }
+      },
+      "events": 51,
+      "replicates": 10000,
+      "seed": 20260920,
+      "unit": "event cluster"
+    },
+    "without_network_posterior": {
+      "difference_direction": "candidate minus full; positive is worse for risk metrics",
+      "estimands": {
+        "clean_acceptance_rate_difference": {
+          "estimate": 0.0392156862745098,
+          "interval_95": [
+            -0.0392156862745098,
+            0.11764705882352941
+          ],
+          "probability_positive": 0.7756
+        },
+        "clean_selective_risk_difference": {
+          "estimate": 0.014718614718614687,
+          "interval_95": [
+            -0.02785145888594162,
+            0.072731074182687
+          ],
+          "probability_positive": 0.6463
+        },
+        "context_wrong_label_rate_difference": {
+          "estimate": 0.23529411764705882,
+          "interval_95": [
+            0.11764705882352944,
+            0.35294117647058826
+          ],
+          "probability_positive": 1.0
+        },
+        "corruption_macro_wrong_label_rate_difference": {
+          "estimate": 0.08235294117647059,
+          "interval_95": [
+            0.05098039215686275,
+            0.11372549019607843
+          ],
+          "probability_positive": 1.0
+        }
+      },
+      "events": 51,
+      "replicates": 10000,
+      "seed": 20260918,
+      "unit": "event cluster"
+    }
+  },
+  "status": "post-freeze diagnostic",
+  "study": "EviGate-Bind P1 cross-view ablation and decision cost"
+}

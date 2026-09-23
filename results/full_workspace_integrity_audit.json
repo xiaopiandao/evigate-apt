@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "audit_scope": "maintained EviGate-APT main manuscript and supplement",
+  "main_manuscript": "paper/evigate_apt_main.md",
+  "supplement": "paper/evigate_apt_supplement.md",
+  "main_sha256": "071107f90b98691f6312b636b294803df3ede3915ea0c2625f2144468feff139",
+  "supplement_sha256": "4e53a4c4cc481194ad0653687eb8b5b2dba1d44a37a9d7d08d8fdbca86c108e6",
+  "claim_registry": "paper/evigate_apt_claim_registry.csv",
+  "claim_registry_rows": 60,
+  "test_method_count": 130,
+  "check_count": 51,
+  "passed_check_count": 51,
+  "checks": [
+    {
+      "category": "dataset",
+      "name": "event and view accounting",
+      "passed": true,
+      "evidence": "59 clusters; 33 both-view; 1004 network and 283 provenance observations; 46 groups"
+    },
+    {
+      "category": "dataset",
+      "name": "in-support single-view accounting",
+      "passed": true,
+      "evidence": "53 supported clusters: 32 both-view, 10 network-only, 11 provenance-only"
+    },
+    {
+      "category": "dataset",
+      "name": "host-link endpoint evidence",
+      "passed": true,
+      "evidence": "8077 usable sockets; 755 exact endpoint/time matches; 733 support the primary endpoint; 1004 attack rows touch it"
+    },
+    {
+      "category": "dataset",
+      "name": "host-link negative controls and causal boundary",
+      "passed": true,
+      "evidence": "all shifted negative controls are zero; direct malicious-process matches=0"
+    },
+    {
+      "category": "dataset",
+      "name": "host-link cohort accounting",
+      "passed": true,
+      "evidence": "{'all_cases': 59, 'both_view_cases': 33, 'host_link_supported_cases': 33, 'in_support_host_link_supported_cases': 32, 'evaluated_nonpilot_host_link_supported_cases': 31}"
+    },
+    {
+      "category": "model",
+      "name": "Stage-A feature and primary operating point",
+      "passed": true,
+      "evidence": "69 features; AP=.8444; coverage=.6974; observed false alerts/h=.1338"
+    },
+    {
+      "category": "model",
+      "name": "Stage-B primary retrieval",
+      "passed": true,
+      "evidence": "55 features; midrank MRR=.95198; expected-tie R@1=.94915"
+    },
+    {
+      "category": "model",
+      "name": "candidate-pool distribution",
+      "passed": true,
+      "evidence": "{'minimum': 7, 'median': 14, 'mean': 285.3898305084746, 'maximum': 8924}"
+    },
+    {
+      "category": "model",
+      "name": "retrieval-radius sensitivity",
+      "passed": true,
+      "evidence": "60-s ceiling=.8814; 300-s MRR=.9520; 900-s ceiling=1.0"
+    },
+    {
+      "category": "model",
+      "name": "repeated grouped-CV retrieval",
+      "passed": true,
+      "evidence": "10 splits; MRR=.93977 +/- .02164"
+    },
+    {
+      "category": "model",
+      "name": "post-freeze benign-candidate stress",
+      "passed": true,
+      "evidence": "59 cases; median +80 benign processes; MRR=.78284; R@10=.91525"
+    },
+    {
+      "category": "model",
+      "name": "benign-donor assignment sensitivity",
+      "passed": true,
+      "evidence": "five no-refit assignments; busy MRR range=0.759619-0.848731"
+    },
+    {
+      "category": "model",
+      "name": "Stage-C conventional endpoint",
+      "passed": true,
+      "evidence": "accuracy=.6226; macro-F1=.3985; controller/margin risk=.3810/.3095"
+    },
+    {
+      "category": "baseline",
+      "name": "trivial baselines",
+      "passed": true,
+      "evidence": "majority=26/53; joint endpoint rule preserves truth in 0/11 activated cases"
+    },
+    {
+      "category": "LLM",
+      "name": "prespecified LLM hypotheses retained as failures",
+      "passed": true,
+      "evidence": "954 outputs; H1=false; H2=false"
+    },
+    {
+      "category": "repair",
+      "name": "deployable EviGate-Bind and margin counts",
+      "passed": true,
+      "evidence": "full clean=33/25/8; margin clean=38/28/10; context wrong=17 versus 45"
+    },
+    {
+      "category": "repair",
+      "name": "LLM incremental-effect boundary",
+      "passed": true,
+      "evidence": "same clean outcomes; incremental estimate=.0261 with interval spanning zero"
+    },
+    {
+      "category": "policy",
+      "name": "decision-cost threshold",
+      "passed": true,
+      "evidence": "break-even abstention cost=0.4"
+    },
+    {
+      "category": "natural evidence",
+      "name": "overlapping-context diagnostic",
+      "passed": true,
+      "evidence": "13/46 overlapping groups; 26 events; 13 pairs, 11 with bidirectional truth overlap"
+    },
+    {
+      "category": "retention",
+      "name": "coverage-retention frontier",
+      "passed": true,
+      "evidence": "coverage .6974->.8000; timestamped bytes .3001->.3854"
+    },
+    {
+      "category": "retention",
+      "name": "compact evidence-package accounting",
+      "passed": true,
+      "evidence": "51 packages; 33 accepted; compact/full serialized bytes=.03267"
+    },
+    {
+      "category": "figures",
+      "name": "Figure 3 source values",
+      "passed": true,
+      "evidence": "{'Three-family wrong-label': 0.23529411764705882, 'Foreign-context wrong-label': 0.5294117647058824, 'Five-family wrong-label': 0.1411764705882353, 'Clean selective risk': 0.09090909090909088}"
+    },
+    {
+      "category": "figures",
+      "name": "three-family grouped sensitivity",
+      "passed": true,
+      "evidence": "51 events / 43 groups; reduction 12/51; 95% group interval [.163, .306]"
+    },
+    {
+      "category": "figures",
+      "name": "posterior-margin curve includes fixed point",
+      "passed": true,
+      "evidence": "margin risk 11/42 at 42/53 coverage"
+    },
+    {
+      "category": "figures",
+      "name": "Figure 2 end-to-end inset",
+      "passed": true,
+      "evidence": "18 correct; 6 wrong; 12 unattributed; 15 Stage-A misses"
+    },
+    {
+      "category": "claims",
+      "name": "clean-risk limitation",
+      "passed": true,
+      "evidence": "not a reliable superiority finding"
+    },
+    {
+      "category": "claims",
+      "name": "LLM necessity limitation",
+      "passed": true,
+      "evidence": "an incremental LLM effect is not established"
+    },
+    {
+      "category": "claims",
+      "name": "non-equivalence statement",
+      "passed": true,
+      "evidence": "not an equivalence test"
+    },
+    {
+      "category": "claims",
+      "name": "causal boundary",
+      "passed": true,
+      "evidence": "does not test direct packet-to-PID causality"
+    },
+    {
+      "category": "claims",
+      "name": "cross-campaign boundary",
+      "passed": true,
+      "evidence": "or cross-campaign generalization"
+    },
+    {
+      "category": "claims",
+      "name": "author-described packet and process labels",
+      "passed": true,
+      "evidence": "The authors used Caldera PIDs to label provenance processes"
+    },
+    {
+      "category": "claims",
+      "name": "host-link post-freeze status",
+      "passed": true,
+      "evidence": "host-link audits are post-freeze"
+    },
+    {
+      "category": "claims",
+      "name": "host-link post-hoc subgroup status",
+      "passed": true,
+      "evidence": "As a post-hoc scope check"
+    },
+    {
+      "category": "claims",
+      "name": "author-mapped host source",
+      "passed": true,
+      "evidence": "Table 3.1 in [@ghiasvand2024thesis]"
+    },
+    {
+      "category": "claims",
+      "name": "Caldera-row versus derived-cluster boundary",
+      "passed": true,
+      "evidence": "59 **union-derived clusters**, not the 58 Caldera-report rows"
+    },
+    {
+      "category": "claims",
+      "name": "Caldera PID corroboration",
+      "passed": true,
+      "evidence": "All 58 PIDs listed in the supplementary Caldera file"
+    },
+    {
+      "category": "claims",
+      "name": "Caldera step-time limitation retained",
+      "passed": true,
+      "evidence": "Supplement reports 1/45 same-row and 38/44 next-row timing; main limits attribution"
+    },
+    {
+      "category": "scope",
+      "name": "no X-IIoTID transfer claim",
+      "passed": true,
+      "evidence": "matches=[]"
+    },
+    {
+      "category": "scope",
+      "name": "no draft version label",
+      "passed": true,
+      "evidence": "matches=[]"
+    },
+    {
+      "category": "scope",
+      "name": "no obsolete missing-host wording",
+      "passed": true,
+      "evidence": "matches=[]"
+    },
+    {
+      "category": "scope",
+      "name": "post-freeze binding-score diagnostic",
+      "passed": true,
+      "evidence": "51 paired cases; AUROC=.6924; 24 foreign binding alarms; main points to S28"
+    },
+    {
+      "category": "scope",
+      "name": "post-freeze clock-offset boundary",
+      "passed": true,
+      "evidence": "fixed-threshold \u00b130-s audit is supplementary; main states deployment precondition"
+    },
+    {
+      "category": "structure",
+      "name": "main-table sequence",
+      "passed": true,
+      "evidence": "[1, 2, 3, 4]"
+    },
+    {
+      "category": "structure",
+      "name": "supplement-table sequence",
+      "passed": true,
+      "evidence": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
+    },
+    {
+      "category": "citations",
+      "name": "citation-key resolution",
+      "passed": true,
+      "evidence": "36 keys; unresolved=[]"
+    },
+    {
+      "category": "citations",
+      "name": "main-text cited-reference count",
+      "passed": true,
+      "evidence": "main unique keys=34"
+    },
+    {
+      "category": "registry",
+      "name": "current claim registry completeness",
+      "passed": true,
+      "evidence": "rows=60; unique=60"
+    },
+    {
+      "category": "registry",
+      "name": "claim evidence paths exist",
+      "passed": true,
+      "evidence": "[]"
+    },
+    {
+      "category": "registry",
+      "name": "registry excludes retired transfer analysis",
+      "passed": true,
+      "evidence": "no retired transfer claim; post-freeze clock audit is registered"
+    },
+    {
+      "category": "reproducibility",
+      "name": "derived-output manifest hashes",
+      "passed": true,
+      "evidence": "[('data/derived/host_link_audit/manifest.json', True, '5 outputs checked; failures=[]'), ('data/derived/p1_diagnostics/manifest.json', True, '13 outputs checked; failures=[]')]"
+    },
+    {
+      "category": "reproducibility",
+      "name": "test inventory is synchronized",
+      "passed": true,
+      "evidence": "discovered=130; manuscript/readme updated"
+    }
+  ],
+  "failed_checks": [],
+  "warnings": [
+    "Author names, affiliations, funding, corresponding-author details, and conflict-of-interest text remain placeholders; complete author_metadata.json before submission.",
+    "No verified public artifact URL is configured; the draft uses request-based availability, while the submission-ready build still requires a URL."
+  ],
+  "passed": true
+}

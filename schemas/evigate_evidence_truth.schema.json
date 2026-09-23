@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/evigate/evidence-truth.schema.json",
+  "title": "EviGate-APT evaluation-only truth sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_cluster_id",
+    "event",
+    "anchor_selection",
+    "network_ground_truth",
+    "provenance_ground_truth",
+    "split_membership"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "pattern": "^case_[0-9a-f]{20}$"},
+    "source_cluster_id": {"type": "string"},
+    "event": {"type": "object"},
+    "anchor_selection": {"type": "object"},
+    "network_ground_truth": {"type": "object"},
+    "provenance_ground_truth": {"type": "object"},
+    "split_membership": {"type": "array", "items": {"type": "object"}}
+  }
+}

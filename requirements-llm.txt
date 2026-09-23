@@ -1,0 +1,8 @@
+# The LLM runner is intentionally separate from the lightweight scikit-learn environment.
+# Install this file into `.venv-llm`; the extra index supplies the pinned CUDA wheel.
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.3.0+cu121
+numpy==1.26.4
+transformers==4.57.6
+huggingface-hub==0.36.2
+safetensors==0.7.0

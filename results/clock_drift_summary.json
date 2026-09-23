@@ -1,0 +1,246 @@
+{
+  "events_per_offset": 51,
+  "fold_audit": {
+    "1": {
+      "binding_target_count": 32,
+      "binding_threshold": 0.2705753900496413,
+      "evigate_margin_threshold": 0.011826,
+      "outer_training_clean_events": 35,
+      "stage_c_calibrated_margin_threshold": 0.009658463215331536
+    },
+    "2": {
+      "binding_target_count": 30,
+      "binding_threshold": 0.15601808728215966,
+      "evigate_margin_threshold": 0.011826,
+      "outer_training_clean_events": 33,
+      "stage_c_calibrated_margin_threshold": 0.01841378114976186
+    },
+    "3": {
+      "binding_target_count": 31,
+      "binding_threshold": 0.06165122774398049,
+      "evigate_margin_threshold": 0.01659,
+      "outer_training_clean_events": 34,
+      "stage_c_calibrated_margin_threshold": 0.059049787509441065
+    }
+  },
+  "input_integrity": {
+    "base_inputs_sha256": "914f71d3cd117578cac26c5d7d671e78aaec00a02cb0744cc4db14663df63bd2",
+    "base_truth_sha256": "c747d5503974d466084b386d4bbf92defd70f04c2698bb993ca2edff35ed80ee",
+    "drift_inputs_sha256": "a9f01cfb3250d6f4781cf77089120d973ac8a34dc244719a1e79724c38380d5d",
+    "drift_truth_sha256": "438296611c820f57b39153c9248637bfa953944db32af482b9d68ea0a52c52cf",
+    "llm_outputs_sha256": "00a9ec968334d1867c242500e8eae31476fc72fcacdf739db73bb0946b747e4f",
+    "stage_c_summary_sha256": "41d0cdbd173636a5bc0a10bb58852060ec7ff33256d6d28f61e780a8364a4f10"
+  },
+  "interpretation_boundary": "The fixed-review path reuses the frozen clean LLM decision and requires its stable support entity to remain in the shifted top-10 package; this isolates verifier sensitivity and is not fresh LLM inference.",
+  "offsets_seconds": [
+    -120,
+    -30,
+    0,
+    30,
+    120
+  ],
+  "results": {
+    "-120": {
+      "binding_pass": 47,
+      "calibrated_margin": {
+        "abstentions": 10,
+        "accepted": 41,
+        "correct_accepted": 29,
+        "coverage": 0.803921568627451,
+        "events": 51,
+        "selective_risk": 0.2926829268292683,
+        "unconditional_correct_rate": 0.5686274509803921,
+        "wrong_label_rate": 0.23529411764705882,
+        "wrong_labels": 12
+      },
+      "cpu_bindgate": {
+        "abstentions": 13,
+        "accepted": 38,
+        "correct_accepted": 29,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.23684210526315788,
+        "unconditional_correct_rate": 0.5686274509803921,
+        "wrong_label_rate": 0.17647058823529413,
+        "wrong_labels": 9
+      },
+      "frozen_positive_certificates": 43,
+      "primary_fixed_review": {
+        "abstentions": 13,
+        "accepted": 38,
+        "correct_accepted": 27,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.2894736842105263,
+        "unconditional_correct_rate": 0.5294117647058824,
+        "wrong_label_rate": 0.21568627450980393,
+        "wrong_labels": 11
+      },
+      "support_entity_retained_top10": 42,
+      "temporal_pass": 51
+    },
+    "-30": {
+      "binding_pass": 48,
+      "calibrated_margin": {
+        "abstentions": 12,
+        "accepted": 39,
+        "correct_accepted": 28,
+        "coverage": 0.7647058823529411,
+        "events": 51,
+        "selective_risk": 0.28205128205128205,
+        "unconditional_correct_rate": 0.5490196078431373,
+        "wrong_label_rate": 0.21568627450980393,
+        "wrong_labels": 11
+      },
+      "cpu_bindgate": {
+        "abstentions": 14,
+        "accepted": 37,
+        "correct_accepted": 28,
+        "coverage": 0.7254901960784313,
+        "events": 51,
+        "selective_risk": 0.24324324324324326,
+        "unconditional_correct_rate": 0.5490196078431373,
+        "wrong_label_rate": 0.17647058823529413,
+        "wrong_labels": 9
+      },
+      "frozen_positive_certificates": 43,
+      "primary_fixed_review": {
+        "abstentions": 13,
+        "accepted": 38,
+        "correct_accepted": 27,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.2894736842105263,
+        "unconditional_correct_rate": 0.5294117647058824,
+        "wrong_label_rate": 0.21568627450980393,
+        "wrong_labels": 11
+      },
+      "support_entity_retained_top10": 43,
+      "temporal_pass": 51
+    },
+    "0": {
+      "binding_pass": 44,
+      "calibrated_margin": {
+        "abstentions": 13,
+        "accepted": 38,
+        "correct_accepted": 28,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.2631578947368421,
+        "unconditional_correct_rate": 0.5490196078431373,
+        "wrong_label_rate": 0.19607843137254902,
+        "wrong_labels": 10
+      },
+      "cpu_bindgate": {
+        "abstentions": 19,
+        "accepted": 32,
+        "correct_accepted": 25,
+        "coverage": 0.6274509803921569,
+        "events": 51,
+        "selective_risk": 0.21875,
+        "unconditional_correct_rate": 0.49019607843137253,
+        "wrong_label_rate": 0.13725490196078433,
+        "wrong_labels": 7
+      },
+      "frozen_positive_certificates": 43,
+      "primary_fixed_review": {
+        "abstentions": 18,
+        "accepted": 33,
+        "correct_accepted": 25,
+        "coverage": 0.6470588235294118,
+        "events": 51,
+        "selective_risk": 0.24242424242424243,
+        "unconditional_correct_rate": 0.49019607843137253,
+        "wrong_label_rate": 0.1568627450980392,
+        "wrong_labels": 8
+      },
+      "support_entity_retained_top10": 43,
+      "temporal_pass": 51
+    },
+    "120": {
+      "binding_pass": 43,
+      "calibrated_margin": {
+        "abstentions": 13,
+        "accepted": 38,
+        "correct_accepted": 25,
+        "coverage": 0.7450980392156863,
+        "events": 51,
+        "selective_risk": 0.34210526315789475,
+        "unconditional_correct_rate": 0.49019607843137253,
+        "wrong_label_rate": 0.2549019607843137,
+        "wrong_labels": 13
+      },
+      "cpu_bindgate": {
+        "abstentions": 19,
+        "accepted": 32,
+        "correct_accepted": 21,
+        "coverage": 0.6274509803921569,
+        "events": 51,
+        "selective_risk": 0.34375,
+        "unconditional_correct_rate": 0.4117647058823529,
+        "wrong_label_rate": 0.21568627450980393,
+        "wrong_labels": 11
+      },
+      "frozen_positive_certificates": 43,
+      "primary_fixed_review": {
+        "abstentions": 21,
+        "accepted": 30,
+        "correct_accepted": 22,
+        "coverage": 0.5882352941176471,
+        "events": 51,
+        "selective_risk": 0.26666666666666666,
+        "unconditional_correct_rate": 0.43137254901960786,
+        "wrong_label_rate": 0.1568627450980392,
+        "wrong_labels": 8
+      },
+      "support_entity_retained_top10": 42,
+      "temporal_pass": 51
+    },
+    "30": {
+      "binding_pass": 38,
+      "calibrated_margin": {
+        "abstentions": 11,
+        "accepted": 40,
+        "correct_accepted": 29,
+        "coverage": 0.7843137254901961,
+        "events": 51,
+        "selective_risk": 0.275,
+        "unconditional_correct_rate": 0.5686274509803921,
+        "wrong_label_rate": 0.21568627450980393,
+        "wrong_labels": 11
+      },
+      "cpu_bindgate": {
+        "abstentions": 22,
+        "accepted": 29,
+        "correct_accepted": 21,
+        "coverage": 0.5686274509803921,
+        "events": 51,
+        "selective_risk": 0.27586206896551724,
+        "unconditional_correct_rate": 0.4117647058823529,
+        "wrong_label_rate": 0.1568627450980392,
+        "wrong_labels": 8
+      },
+      "frozen_positive_certificates": 43,
+      "primary_fixed_review": {
+        "abstentions": 21,
+        "accepted": 30,
+        "correct_accepted": 20,
+        "coverage": 0.5882352941176471,
+        "events": 51,
+        "selective_risk": 0.3333333333333333,
+        "unconditional_correct_rate": 0.39215686274509803,
+        "wrong_label_rate": 0.19607843137254902,
+        "wrong_labels": 10
+      },
+      "support_entity_retained_top10": 43,
+      "temporal_pass": 51
+    }
+  },
+  "schema_version": "1.0",
+  "status": "post-freeze; no drifted package used for fitting or threshold selection",
+  "study": "EviGate bounded signed clock-drift stress test",
+  "zero_offset_validation": {
+    "margin_zero_offset_matches_published_clean": true,
+    "primary_zero_offset_matches_published_clean": true
+  }
+}

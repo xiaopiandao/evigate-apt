@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/evigate/llm-response.schema.json",
+  "title": "EviGate-LLM evidence-contracted response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "decision",
+    "tactic",
+    "evidence_sufficient",
+    "integrity_alarm",
+    "confidence",
+    "cited_entity_ids",
+    "cited_anchor_ids",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "pattern": "^case_[0-9a-f]{20}$"},
+    "decision": {"enum": ["attribute", "abstain"]},
+    "tactic": {
+      "type": ["string", "null"],
+      "enum": [
+        "collection",
+        "command_and_control",
+        "credential_access",
+        "discovery",
+        "exfiltration",
+        null
+      ]
+    },
+    "evidence_sufficient": {"type": "boolean"},
+    "integrity_alarm": {"type": "boolean"},
+    "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "cited_entity_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "cited_anchor_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 6,
+      "items": {"type": "string"}
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "enum": [
+          "sufficient_observed_support",
+          "missing_process_evidence",
+          "insufficient_process_evidence",
+          "conflicting_cross_view_evidence",
+          "temporal_mismatch",
+          "ambiguous_tactic",
+          "suspected_evidence_corruption"
+        ]
+      }
+    }
+  }
+}

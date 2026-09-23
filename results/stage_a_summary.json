@@ -1,0 +1,734 @@
+{
+  "schema_version": "1.0",
+  "experiment": "EviGate-APT Stage-A network alert baselines",
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "false_alert_budgets_per_hour": [
+    0.5,
+    1.0
+  ],
+  "models": [
+    "logistic_regression",
+    "hist_gradient_boosting",
+    "light_mlp"
+  ],
+  "feature_count": 69,
+  "window_count": 4325,
+  "network_positive_window_count": 83,
+  "benign_stress_window_count": 5754,
+  "evaluation_unit": "60-second network window; event coverage is a secondary grouped endpoint",
+  "threshold_policy": "calibration-only threshold maximizing positive-window true positives, then minimizing false positives, under the requested false-alert budget",
+  "aggregate": {
+    "hist_gradient_boosting": {
+      "0.5": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.8444073772938298,
+            "sample_std_across_fold_means": 0.052942861567936796,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.7855039192987031,
+              0.8880271537279307,
+              0.8596910588548555
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9897863517857975,
+            "sample_std_across_fold_means": 0.011759954617970003,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.976212011577424,
+              0.9968889557930654,
+              0.9962580879869034
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.8804713804713805,
+            "sample_std_across_fold_means": 0.1120635639100513,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8636363636363636,
+              1.0,
+              0.7777777777777778
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.6085954275609449,
+            "sample_std_across_fold_means": 0.1622711100786886,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.6785714285714286,
+              0.4230769230769231,
+              0.7241379310344828
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.13384488040333406,
+            "sample_std_across_fold_means": 0.1356801120648032,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.13024602026049203,
+              0.0,
+              0.2712886209495102
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.6973684210526315,
+            "sample_std_across_fold_means": 0.17702136904044355,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.75,
+              0.5,
+              0.8421052631578947
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.7189542483660131,
+            "sample_std_across_fold_means": 0.18968329229975753,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8235294117647058,
+              0.5,
+              0.8333333333333334
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.7928921568627451,
+            "sample_std_across_fold_means": 0.15899761247509253,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8125,
+              0.625,
+              0.9411764705882353
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.16666666666666666,
+            "sample_std_across_fold_means": 0.28867513459481287,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 0.0,
+            "sample_std_across_fold_means": 0.0,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "1.0": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.8444073772938298,
+            "sample_std_across_fold_means": 0.052942861567936796,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.7855039192987031,
+              0.8880271537279307,
+              0.8596910588548555
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9897863517857975,
+            "sample_std_across_fold_means": 0.011759954617970003,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.976212011577424,
+              0.9968889557930654,
+              0.9962580879869034
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.8824476650563607,
+            "sample_std_across_fold_means": 0.11166981286689731,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8695652173913043,
+              1.0,
+              0.7777777777777778
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.6205001894657067,
+            "sample_std_across_fold_means": 0.17104451504631374,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.7142857142857143,
+              0.4230769230769231,
+              0.7241379310344828
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.13384488040333406,
+            "sample_std_across_fold_means": 0.1356801120648032,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.13024602026049203,
+              0.0,
+              0.2712886209495102
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.7140350877192982,
+            "sample_std_across_fold_means": 0.18655154080750622,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8,
+              0.5,
+              0.8421052631578947
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.738562091503268,
+            "sample_std_across_fold_means": 0.20804959532545106,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8823529411764706,
+              0.5,
+              0.8333333333333334
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.8137254901960784,
+            "sample_std_across_fold_means": 0.16675675189386324,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.875,
+              0.625,
+              0.9411764705882353
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.16666666666666666,
+            "sample_std_across_fold_means": 0.28867513459481287,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.5,
+              0.0,
+              0.0
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 0.0,
+            "sample_std_across_fold_means": 0.0,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "light_mlp": {
+      "0.5": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.4884793715173403,
+            "sample_std_across_fold_means": 0.16261943895527628,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.6757038921567835,
+              0.3824045240012599,
+              0.40732969839397737
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9329152817522385,
+            "sample_std_across_fold_means": 0.024107334681918304,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.953349183378127,
+              0.906327462491846,
+              0.9390691993867423
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.6392607707623188,
+            "sample_std_across_fold_means": 0.18699429850111007,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.8425199362041467,
+              0.6007275541795666,
+              0.474534821903243
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.30485663761525833,
+            "sample_std_across_fold_means": 0.03480437244304923,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.30714285714285716,
+              0.3384615384615385,
+              0.2689655172413793
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.23434782013013247,
+            "sample_std_across_fold_means": 0.15999757246985594,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.07814761215629522,
+              0.22700587084148727,
+              0.39788997739261495
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.4173684210526316,
+            "sample_std_across_fold_means": 0.02199848899369089,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.4,
+              0.41000000000000003,
+              0.4421052631578947
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.43442265795206975,
+            "sample_std_across_fold_means": 0.049212402277979975,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.45882352941176474,
+              0.37777777777777777,
+              0.4666666666666667
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.4612745098039216,
+            "sample_std_across_fold_means": 0.02508994776124599,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.4875,
+              0.4375,
+              0.45882352941176474
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.21666666666666667,
+            "sample_std_across_fold_means": 0.14433756729740643,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.05,
+              0.3,
+              0.3
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 2.2586027111574554,
+            "sample_std_across_fold_means": 0.11784491507475839,
+            "independent_fold_count": 3,
+            "fold_means": [
+              2.1418143899895723,
+              2.256517205422315,
+              2.3774765380604794
+            ]
+          }
+        }
+      },
+      "1.0": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.4884793715173403,
+            "sample_std_across_fold_means": 0.16261943895527628,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.6757038921567835,
+              0.3824045240012599,
+              0.40732969839397737
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9329152817522385,
+            "sample_std_across_fold_means": 0.024107334681918304,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.953349183378127,
+              0.906327462491846,
+              0.9390691993867423
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.5698812954617909,
+            "sample_std_across_fold_means": 0.1811094932209205,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.7734891424365109,
+              0.5094117647058823,
+              0.42674297924297927
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.4630920803334596,
+            "sample_std_across_fold_means": 0.06042195360056715,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.44285714285714284,
+              0.41538461538461535,
+              0.5310344827586206
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.5176148766789346,
+            "sample_std_across_fold_means": 0.3982260986924052,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.1649782923299566,
+              0.4383561643835616,
+              0.9495101733232856
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.6263157894736843,
+            "sample_std_across_fold_means": 0.13218282478815113,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.55,
+              0.55,
+              0.7789473684210526
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.6374727668845316,
+            "sample_std_across_fold_means": 0.13387901494175986,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.6235294117647059,
+              0.5111111111111111,
+              0.7777777777777778
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.678921568627451,
+            "sample_std_across_fold_means": 0.12544111900327398,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.6625,
+              0.5625,
+              0.8117647058823529
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.3666666666666667,
+            "sample_std_across_fold_means": 0.2309401076758503,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.1,
+              0.5,
+              0.5
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 4.326729231838721,
+            "sample_std_across_fold_means": 0.6327588452575867,
+            "independent_fold_count": 3,
+            "fold_means": [
+              3.9666319082377473,
+              3.9562043795620436,
+              5.057351407716371
+            ]
+          }
+        }
+      }
+    },
+    "logistic_regression": {
+      "0.5": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.3272312758202496,
+            "sample_std_across_fold_means": 0.11726531895738183,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.45759083351246654,
+              0.23033487169821268,
+              0.2937681222500695
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9174567729546935,
+            "sample_std_across_fold_means": 0.009952873725433008,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.9118771966094686,
+              0.928947764564203,
+              0.9115453576904088
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.03333333333333333,
+            "sample_std_across_fold_means": 0.05773502691896258,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.1,
+              0.0
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.012820512820512822,
+            "sample_std_across_fold_means": 0.022205779584216375,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.038461538461538464,
+              0.0
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.11741682974559686,
+            "sample_std_across_fold_means": 0.20337191478303843,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.3522504892367906,
+              0.0
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.049999999999999996,
+            "sample_std_across_fold_means": 0.08660254037844387,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.15,
+              0.0
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.05555555555555555,
+            "sample_std_across_fold_means": 0.09622504486493762,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.16666666666666666,
+              0.0
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.041666666666666664,
+            "sample_std_across_fold_means": 0.07216878364870322,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.125,
+              0.0
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.08333333333333333,
+            "sample_std_across_fold_means": 0.14433756729740643,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.25,
+              0.0
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 0.03128258602711157,
+            "sample_std_across_fold_means": 0.05418302839110148,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.09384775808133472,
+              0.0
+            ]
+          }
+        }
+      },
+      "1.0": {
+        "configuration_rows": 15,
+        "independent_fold_count": 3,
+        "seeds_per_fold": 5,
+        "metrics": {
+          "window_average_precision": {
+            "mean_of_fold_means": 0.3272312758202496,
+            "sample_std_across_fold_means": 0.11726531895738183,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.45759083351246654,
+              0.23033487169821268,
+              0.2937681222500695
+            ]
+          },
+          "window_roc_auc": {
+            "mean_of_fold_means": 0.9174567729546935,
+            "sample_std_across_fold_means": 0.009952873725433008,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.9118771966094686,
+              0.928947764564203,
+              0.9115453576904088
+            ]
+          },
+          "window_precision": {
+            "mean_of_fold_means": 0.10256410256410257,
+            "sample_std_across_fold_means": 0.177646236673731,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.3076923076923077,
+              0.0
+            ]
+          },
+          "window_recall": {
+            "mean_of_fold_means": 0.15384615384615385,
+            "sample_std_across_fold_means": 0.26646935501059654,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.46153846153846156,
+              0.0
+            ]
+          },
+          "false_alerts_per_hour": {
+            "mean_of_fold_means": 0.3811940492946777,
+            "sample_std_across_fold_means": 0.5866585556669339,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.08683068017366136,
+              1.0567514677103718,
+              0.0
+            ]
+          },
+          "all_event_coverage": {
+            "mean_of_fold_means": 0.26666666666666666,
+            "sample_std_across_fold_means": 0.46188021535170065,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.8,
+              0.0
+            ]
+          },
+          "in_support_event_coverage": {
+            "mean_of_fold_means": 0.25925925925925924,
+            "sample_std_across_fold_means": 0.4490502093697089,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.7777777777777778,
+              0.0
+            ]
+          },
+          "network_visible_event_coverage": {
+            "mean_of_fold_means": 0.2708333333333333,
+            "sample_std_across_fold_means": 0.46909709371657093,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.8125,
+              0.0
+            ]
+          },
+          "network_absent_event_coverage": {
+            "mean_of_fold_means": 0.25,
+            "sample_std_across_fold_means": 0.4330127018922193,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.0,
+              0.75,
+              0.0
+            ]
+          },
+          "benign_stress_false_alerts_per_hour": {
+            "mean_of_fold_means": 0.4483837330552659,
+            "sample_std_across_fold_means": 0.7224403785480197,
+            "independent_fold_count": 3,
+            "fold_means": [
+              0.03128258602711157,
+              1.2825860271115745,
+              0.03128258602711157
+            ]
+          }
+        }
+      }
+    }
+  },
+  "environment": {
+    "python": "3.11.2 (tags/v3.11.2:878ead1, Feb  7 2023, 16:38:35) [MSC v.1934 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "source_files": {
+    "features": {
+      "path": "data/derived/stage_a/network_windows.features.csv",
+      "sha256": "7ab0491e100630ea734f8c687347e62a96ef70579736df98424c916ee6b6bbe5"
+    },
+    "truth": {
+      "path": "data/derived/stage_a/network_windows.truth.csv",
+      "sha256": "5bce414ca17114b65eac0028bc2531ef51c9f5851d3e60708e581741defba642"
+    },
+    "cases": {
+      "path": "data/derived/evigate_phase2_evidence/cases.truth.jsonl",
+      "sha256": "ce0b3d06d7bade9653fabd028ce002e3022523391e632329da483d559658e5e8"
+    },
+    "splits": {
+      "path": "data/derived/stage_a/network_window_splits.json",
+      "sha256": "a756dc50e7f9864e1f11965b56689633e9ce69100de80d64351a751aa265f9f1"
+    },
+    "benign_stress_features": {
+      "path": "data/derived/stage_a_phase1/network_windows.features.csv",
+      "sha256": "fafe9cddab44b9b22de9e52c8f341e4603b387fa49e2ce8b5a5b6a8b822fa85a"
+    },
+    "benign_stress_truth": {
+      "path": "data/derived/stage_a_phase1/network_windows.truth.csv",
+      "sha256": "4674005147014e3491cfc961ed436cc93dccc89058b1f69bf9291151db70f55f"
+    }
+  },
+  "output_files": {
+    "metrics": {
+      "path": "data/derived/stage_a/baseline_run/stage_a_metrics.csv",
+      "sha256": "81abad037ec6d524a33a0586ce248250adb913bd2ada284e41d9247d3c393f12"
+    },
+    "predictions": {
+      "path": "data/derived/stage_a/baseline_run/stage_a_predictions.csv",
+      "sha256": "91f39c5d251c052f71e33bcfcf7f330507e426f04b426b9caec823f6d738b347"
+    },
+    "event_results": {
+      "path": "data/derived/stage_a/baseline_run/stage_a_event_results.csv",
+      "sha256": "6c3370a8d6b228aaca20d685a6cb3644e5641ede28dddfefa2badc692cb393be"
+    },
+    "benign_stress_predictions": {
+      "path": "data/derived/stage_a/baseline_run/stage_a_benign_stress_predictions.csv",
+      "sha256": "b842fe3b3f4f90105e37e6c3d78b943a77a0b2a1747b2a52e92e55b0ea2e4aa3"
+    }
+  },
+  "warnings": [
+    "Phase-2 event labels are provisional union-derived labels because the official Attack_info.csv was unavailable.",
+    "Only 83 of 4325 windows are network-positive; calibration folds contain 9-14 positives, so threshold stability must be reported.",
+    "Event coverage includes network-absent cases as a separately named stress-test stratum, not as ordinary detector positives.",
+    "Phase 1 benign stress results measure both false alerts and cross-phase distribution shift; they are not an IID estimate of Phase 2 specificity."
+  ]
+}

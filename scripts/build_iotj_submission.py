@@ -28,6 +28,8 @@ BLOCKED_MARKERS = (
     "severity=HIGH-BLOCK",
 )
 
+PUBLIC_ARTIFACT_URL = "https://github.com/xiaopiandao/evigate-apt"
+
 
 def run_pandoc(pandoc: Path, source: Path, target: Path, lua_filter: Path) -> None:
     command = [
@@ -329,7 +331,7 @@ def load_author_metadata(path: Path | None, submission_ready: bool) -> dict[str,
             "short_author_latex": "Anonymous Author(s)",
             "thanks_latex": [],
             "conflict_of_interest_latex": "",
-            "artifact_url": "",
+            "artifact_url": PUBLIC_ARTIFACT_URL,
         }
 
     metadata = json.loads(path.read_text(encoding="utf-8"))
